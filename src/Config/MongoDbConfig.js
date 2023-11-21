@@ -1,6 +1,7 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const { MongoDBUrl } = require("../Secret");
 
+console.log(MongoDBUrl);
 //Mongodb Client
 const client = new MongoClient(MongoDBUrl, {
   serverApi: {
