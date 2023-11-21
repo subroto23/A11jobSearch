@@ -1,8 +1,9 @@
 const express = require("express");
-const addJobsRoute = express.Router();
+const allJobsRoute = express.Router();
 const AddJobsPostController = require("../../Controller/AddJobs/AddJobsPostController");
+const allJobsGetController = require("../../Controller/AddJobs/AllJobsGetController");
 
-//Post Request Handler
-addJobsRoute.post("/create", AddJobsPostController);
+allJobsRoute.get("/", allJobsGetController);
+allJobsRoute.post("/create", AddJobsPostController);
 
-module.exports = addJobsRoute;
+module.exports = allJobsRoute;
