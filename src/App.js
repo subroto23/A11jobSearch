@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 //All Routes Start
-app.use("/add-jobs", addJobsRoute);
+app.use("/jobs", addJobsRoute);
 //All Routes End
 
 //Error Routing
