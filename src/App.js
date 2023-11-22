@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const addJobsRoute = require("./Route/AddJobs/AddJobsRouter");
+const ResumeRoute = require("./Route/Resume/ResumeCollectionRoute");
 const app = express();
 
 //MiddleWare Declarations
@@ -17,6 +18,10 @@ app.use(cookieParser());
 
 //All Routes Start
 app.use("/jobs", addJobsRoute);
+
+//Resume Route
+app.use("/resume", ResumeRoute);
+
 //All Routes End
 
 //Error Routing

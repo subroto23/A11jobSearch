@@ -23,7 +23,9 @@ const mongodbConnection = async () => {
 };
 
 const allJobs = client.db("jobs").collection("alljobs");
+const applyicants = client.db("jobs").collection("applyicants");
 module.exports = {
   mongodbConnection,
   allJobs,
+  applyicants,
 };

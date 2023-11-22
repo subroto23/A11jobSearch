@@ -7,7 +7,7 @@ const AddJobsPostController = async (req, res, next) => {
     if (!response) {
       return res.send("Failed! Your Post was Not Created");
     }
-    res.send(jobsData);
+    res.status(200).send(response);
   } catch (error) {
     console.log(error.message);
   }
