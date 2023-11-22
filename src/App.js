@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const addJobsRoute = require("./Route/AddJobs/AddJobsRouter");
 const ResumeRoute = require("./Route/Resume/ResumeCollectionRoute");
 const secureApiRoute = require("./Route/SecureApi/SecureApiRoute");
+const MyPostedJobsRoute = require("./Route/MyPostedJobs/MyPostedJobsRoute");
 const app = express();
 
 //MiddleWare Declarations
@@ -25,6 +26,9 @@ app.use("/jobs", addJobsRoute);
 
 //Resume Route
 app.use("/resume", ResumeRoute);
+
+//My Jobs Route
+app.use("/api/my-jobs", MyPostedJobsRoute);
 
 //All Routes End
 
