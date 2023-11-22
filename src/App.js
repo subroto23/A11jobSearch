@@ -3,6 +3,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const addJobsRoute = require("./Route/AddJobs/AddJobsRouter");
 const ResumeRoute = require("./Route/Resume/ResumeCollectionRoute");
+const secureApiRoute = require("./Route/SecureApi/SecureApiRoute");
 const app = express();
 
 //MiddleWare Declarations
@@ -15,6 +16,9 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+//Secure Api
+app.use("/secure/api", secureApiRoute);
 
 //All Routes Start
 app.use("/jobs", addJobsRoute);
