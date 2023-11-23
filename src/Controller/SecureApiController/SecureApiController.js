@@ -6,7 +6,7 @@ const SecureApiPostController = async (req, res, next) => {
     res
       .cookie("access_token", token, {
         httpOnly: true,
-        secure: false,
+        secure: true,
         samesite: "none",
       })
       .send({ success: true });

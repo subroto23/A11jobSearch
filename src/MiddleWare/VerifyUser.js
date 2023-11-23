@@ -11,7 +11,6 @@ const VerifyUser = (req, res, next) => {
       return res.status(401).send({ message: "unauthorized access" });
     }
     req.user = decode;
-    next();
   });
   next();
 };
