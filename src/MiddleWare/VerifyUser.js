@@ -1,8 +1,7 @@
 const jwt = require("jsonwebtoken");
 const { apiSecretsKey } = require("../Secret");
-
-const VerifyUser = (req, res, next) => {
-  const token = req?.cookies?.access_token;
+const VerifyUser = async (req, res, next) => {
+  const token = await req.cookies.access_token;
   if (!token) {
     return res.status(403).send({ message: "unauthorized access" });
   }
