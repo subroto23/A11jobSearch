@@ -5,6 +5,9 @@ const addJobsRoute = require("./Route/AddJobs/AddJobsRouter");
 const ResumeRoute = require("./Route/Resume/ResumeCollectionRoute");
 const secureApiRoute = require("./Route/SecureApi/SecureApiRoute");
 const MyPostedJobsRoute = require("./Route/MyPostedJobs/MyPostedJobsRoute");
+const ApplyJobsRoute = require("./Route/ApplyJob/ApplyJobRoute");
+const loggedUser = require("./MiddleWare/LoggedUser");
+const VerifyUser = require("./MiddleWare/VerifyUser");
 const app = express();
 
 //MiddleWare Declarations
@@ -29,6 +32,9 @@ app.use("/resume", ResumeRoute);
 
 //My Jobs Route
 app.use("/api/my-jobs", MyPostedJobsRoute);
+
+//Apply Job
+app.use("/api/apply/jobs", loggedUser, VerifyUser, ApplyJobsRoute);
 
 //All Routes End
 
