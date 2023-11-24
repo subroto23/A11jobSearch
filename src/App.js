@@ -14,7 +14,7 @@ const app = express();
 app.use(
   cors({
     // origin: ["http://localhost:5173"],
-    origin: ["https://job-search-plum.vercel.app"],
+    origin: ["https://a11-client-side-search-job.vercel.app"],
     credentials: true,
   })
 );
