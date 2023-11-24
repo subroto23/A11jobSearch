@@ -3,9 +3,9 @@ const secureApiLogOutPostController = async (req, res, next) => {
     res
       .clearCookie("access_token", {
         maxAge: 0,
-        domain: "https://a11-client-side-search-job.vercel.app/",
-        secure: true, // Ensure the secure attribute matches the original cookie
-        sameSite: "None",
+        domain: "https://a11-client-side-search-job.vercel.app",
+        secure: true,
+        sameSite: "none",
       })
       .send({ success: true });
   } catch (error) {
