@@ -13,10 +13,8 @@ const app = express();
 //MiddleWare Declarations
 app.use(
   cors({
-    origin: [
-      "https://a11-client-side-search-3mw390rwu-subroto23.vercel.app",
-      "https://a11-client-side-search-job.vercel.app",
-    ],
+    // origin: ["http://localhost:5173"],
+    origin: ["https://job-search-plum.vercel.app"],
     credentials: true,
   })
 );
