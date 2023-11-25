@@ -1,10 +1,6 @@
 const secureApiLogOutPostController = async (req, res, next) => {
   try {
-    res
-      .clearCookie("access_token", {
-        maxAge: 0,
-      })
-      .send({ success: true });
+    res.clearCookie("access_token").send({ success: true });
   } catch (error) {
     console.log(err);
   }
