@@ -7,6 +7,8 @@ const SecureApiPostController = async (req, res, next) => {
       httpOnly: false,
       secure: true,
       sameSite: "none",
+      path: "/",
+      domain: "job-search-plum.vercel.app",
     });
     res.send({ success: true });
   } catch (error) {
